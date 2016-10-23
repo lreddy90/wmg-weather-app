@@ -10,19 +10,22 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var container: UIView!
+    
+    var weatherTableView: WeatherTableView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ApiHandler.getForecast { (status, error) in
-            print("api handler finished in mainVC")
-        }
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        // Setup the container
+        weatherTableView = Bundle.main.loadNibNamed("WeatherTableView", owner: nil, options: nil)?[0] as? WeatherTableView
+        container.addSubview(weatherTableView!)
+        weatherTableView!.frame = container.bounds
 
+//        ApiHandler.getForecast { (status, error) in
+//            print("api handler finished in mainVC")
+//        }
+    }
 
 }
 

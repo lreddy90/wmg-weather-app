@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-OP-o4h">
-                                <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -27,9 +27,12 @@
                             <constraint firstItem="rJ7-OP-o4h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BSi-99-sHY"/>
                             <constraint firstAttribute="trailing" secondItem="rJ7-OP-o4h" secondAttribute="trailing" id="C2h-9i-fhi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rJ7-OP-o4h" secondAttribute="bottom" id="GST-Oh-YxP"/>
-                            <constraint firstItem="rJ7-OP-o4h" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Woz-qs-TaI"/>
+                            <constraint firstItem="rJ7-OP-o4h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="m7x-pf-Xv6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="rJ7-OP-o4h" id="N8p-mB-Fs7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
