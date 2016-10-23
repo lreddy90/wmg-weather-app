@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainVC.swift
 //  weather
 //
 //  Created by Richard Dancsi on 24/10/2016.
@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ApiHandler.getForecast { (status, error) in
+            print("api handler finished in mainVC")
+        }
     }
 
     override func didReceiveMemoryWarning() {
