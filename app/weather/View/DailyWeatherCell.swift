@@ -30,7 +30,7 @@ class DailyWeatherCell : UITableViewCell, UICollectionViewDelegate, UICollection
         collectionView.reloadData()
 
         if (weatherSamples.count > 0) {
-            label.text = weatherSamples[0].weatherMain
+            label.text = weatherSamples[0].dateString(format: "dd MMMM YYYY")
         }
     }
     

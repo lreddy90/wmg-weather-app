@@ -29,18 +29,17 @@ class SampleViewCell : UICollectionViewCell {
         weatherMainLabel.text = weatherSample.weatherMain
         weatherDescriptionLabel.text = weatherSample.weatherDescription
         
-        if (weatherSample.temperature != nil) {
-            temperatureLabel.text = "\(weatherSample.temperature!)"
+        if (weatherSample.temperatureInCelsius() != nil) {
+            temperatureLabel.text = "\(weatherSample.temperatureInCelsius()!) °C"
         }
-        if (weatherSample.minTemperature != nil) {
-            minTemperatureLabel.text = "\(weatherSample.minTemperature!)"
+        if (weatherSample.minTemperatureInCelsius() != nil) {
+            minTemperatureLabel.text = "\(weatherSample.minTemperatureInCelsius()!) °C"
         }
-        if (weatherSample.maxTemperature != nil) {
-            maxTemperatureLabel.text = "\(weatherSample.maxTemperature!)"
+        if (weatherSample.maxTemperatureInCelsius() != nil) {
+            maxTemperatureLabel.text = "\(weatherSample.maxTemperatureInCelsius()!) °C"
         }
-        if (weatherSample.timestamp != nil) {
-            hourLabel.text = "\(weatherSample.timestamp!)"
-        }
+        
+        hourLabel.text = weatherSample.dateString(format: "HH:mm")
     }
     
 }
