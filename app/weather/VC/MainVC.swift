@@ -22,9 +22,10 @@ class MainVC: UIViewController {
         container.addSubview(weatherTableView!)
         weatherTableView!.frame = container.bounds
 
-//        ApiHandler.getForecast { (status, error) in
-//            print("api handler finished in mainVC")
-//        }
+        // Download the data from OpenWeatherMap
+        ApiHandler.getForecast { (status, error) in
+            self.weatherTableView?.reloadData()
+        }
     }
 
 }

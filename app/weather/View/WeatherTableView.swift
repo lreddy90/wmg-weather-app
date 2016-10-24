@@ -33,23 +33,14 @@ class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
         let nibName = UINib(nibName: "DailyWeatherCell", bundle:nil)
         tableView.register(nibName, forCellReuseIdentifier: "DailyWeatherCell")
         
-        let w1 = WeatherSample()
-        w1.weatherMain = "Cloud"
-        let w2 = WeatherSample()
-        w2.weatherMain = "Rain"
-        let w3 = WeatherSample()
-        w3.weatherMain = "Something"
-        let w4 = WeatherSample()
-        w4.weatherMain = "Else"
-        let w5 = WeatherSample()
-        w5.weatherMain = "Entirely"
-        let w6 = WeatherSample()
-        w6.weatherMain = "This"
-        
-        collection = [[w1, w2], [w3, w4, w5], [w6]]
-        tableView.reloadData()
+        reloadData()
     }
     
+    func reloadData() {
+        collection = State.sharedInstance.groupedWeatherSamples()
+        tableView.reloadData()
+    }
+
     /**
      UITableView
      */

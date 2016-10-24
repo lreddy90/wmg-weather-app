@@ -23,8 +23,9 @@ class DailyWeatherCell : UITableViewCell {
     func setWeatherSamples(weatherSamples: [WeatherSample]) {
         self.weatherSamples = weatherSamples
 
-        // TODO this is unsafe
-        label.text = weatherSamples[0].weatherMain
+        if (weatherSamples.count > 0) {
+            label.text = weatherSamples[0].weatherMain
+        }
 
         let width = 120
         let height = self.bounds.height - scrollViewTopMargin.constant
