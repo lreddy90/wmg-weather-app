@@ -34,6 +34,10 @@ class DailyWeatherCell : UITableViewCell, UICollectionViewDelegate, UICollection
         }
     }
     
+    /**
+     UICollectionView
+     */
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SampleViewCell", for: indexPath) as! SampleViewCell
         

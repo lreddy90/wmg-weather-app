@@ -11,6 +11,8 @@ import UIKit
 class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!    
+
+    var refreshControl: UIRefreshControl?
     
     var collection: [[WeatherSample]] = []
     
@@ -37,10 +39,19 @@ class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func reloadData() {
+        refreshControl?.endRefreshing()
         collection = State.sharedInstance.groupedWeatherSamples()
         tableView.reloadData()
     }
 
+    func initRefreshControl(mainVC: MainVC) {
+        if (refreshControl == nil) {
+            refreshControl = UIRefreshControl()
+            refreshControl?.addTarget(mainVC, action: #selector(MainVC.tableViewRefreshRequested), for: UIControlEvents.valueChanged)
+            tableView.addSubview(refreshControl!)
+        }
+    }
+    
     /**
      UITableView
      */
