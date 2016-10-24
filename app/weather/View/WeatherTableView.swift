@@ -12,7 +12,7 @@ class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!    
     
-    var collection: [String]? = []
+    var collection: [[WeatherSample]] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,11 +29,24 @@ class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func setup() {
-        tableView.rowHeight = 128
+        tableView.rowHeight = 256
         let nibName = UINib(nibName: "DailyWeatherCell", bundle:nil)
         tableView.register(nibName, forCellReuseIdentifier: "DailyWeatherCell")
         
-        collection = ["Hello", "Nothing", "To", "See", "Here", "(Yet)"]
+        let w1 = WeatherSample()
+        w1.weatherMain = "Cloud"
+        let w2 = WeatherSample()
+        w2.weatherMain = "Rain"
+        let w3 = WeatherSample()
+        w3.weatherMain = "Something"
+        let w4 = WeatherSample()
+        w4.weatherMain = "Else"
+        let w5 = WeatherSample()
+        w5.weatherMain = "Entirely"
+        let w6 = WeatherSample()
+        w6.weatherMain = "This"
+        
+        collection = [[w1, w2], [w3, w4, w5], [w6]]
         tableView.reloadData()
     }
     
@@ -42,18 +55,14 @@ class WeatherTableView : UIView, UITableViewDelegate, UITableViewDataSource {
      */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (collection == nil) {
-            return 0
-        }
-        return collection!.count
+        return collection.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DailyWeatherCell", for: indexPath) as! DailyWeatherCell
         
-        if let title = collection?[indexPath.row] {
-            cell.addItemToCell(item: title)
-        }
+        let weatherSamples = collection[indexPath.row]
+        cell.setWeatherSamples(weatherSamples: weatherSamples)
         
         return cell
     }
