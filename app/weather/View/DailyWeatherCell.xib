@@ -13,28 +13,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6Y-mc-ESR">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-40-rh3">
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                </scrollView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-Gw-TDy">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y0Q-Uw-29h">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="ext-rD-kG2"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="aTu-HI-Uap"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9d7-40-rh3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7IZ-QG-Io0"/>
-                <constraint firstItem="9d7-40-rh3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="48" id="8K3-UB-5eQ"/>
-                <constraint firstAttribute="trailing" secondItem="9d7-40-rh3" secondAttribute="trailing" id="9uU-fM-IUC"/>
-                <constraint firstAttribute="bottom" secondItem="9d7-40-rh3" secondAttribute="bottom" id="FB7-LC-j0U"/>
+                <constraint firstAttribute="bottom" secondItem="RmA-Gw-TDy" secondAttribute="bottom" id="Fcu-uC-lZ6"/>
+                <constraint firstItem="RmA-Gw-TDy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MOf-4W-2w5"/>
+                <constraint firstItem="RmA-Gw-TDy" firstAttribute="top" secondItem="K6Y-mc-ESR" secondAttribute="bottom" constant="8" id="Smf-pN-rmy"/>
+                <constraint firstAttribute="trailing" secondItem="RmA-Gw-TDy" secondAttribute="trailing" id="d3J-dP-4CD"/>
                 <constraint firstItem="K6Y-mc-ESR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="eGz-qb-xcC"/>
                 <constraint firstItem="K6Y-mc-ESR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="zCk-O4-iTS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="collectionView" destination="RmA-Gw-TDy" id="UWj-iu-1pM"/>
                 <outlet property="label" destination="K6Y-mc-ESR" id="gOd-Qz-pBR"/>
-                <outlet property="scrollView" destination="9d7-40-rh3" id="Lg3-6G-Ns7"/>
-                <outlet property="scrollViewTopMargin" destination="8K3-UB-5eQ" id="0Wr-d0-raT"/>
             </connections>
             <point key="canvasLocation" x="44.5" y="-154"/>
         </view>

@@ -1,5 +1,5 @@
 //
-//  SampleView.swift
+//  SampleViewCell.swift
 //  weather
 //
 //  Created by Richard Dancsi on 24/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SampleView : UIView {
+class SampleViewCell : UICollectionViewCell {
     
     @IBOutlet weak var weatherMainLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
@@ -27,6 +27,20 @@ class SampleView : UIView {
         self.weatherSample = weatherSample
         
         weatherMainLabel.text = weatherSample.weatherMain
+        weatherDescriptionLabel.text = weatherSample.weatherDescription
+        
+        if (weatherSample.temperature != nil) {
+            temperatureLabel.text = "\(weatherSample.temperature!)"
+        }
+        if (weatherSample.minTemperature != nil) {
+            minTemperatureLabel.text = "\(weatherSample.minTemperature!)"
+        }
+        if (weatherSample.maxTemperature != nil) {
+            maxTemperatureLabel.text = "\(weatherSample.maxTemperature!)"
+        }
+        if (weatherSample.timestamp != nil) {
+            hourLabel.text = "\(weatherSample.timestamp!)"
+        }
     }
     
 }

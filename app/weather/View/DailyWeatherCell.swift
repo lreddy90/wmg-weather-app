@@ -8,39 +8,47 @@
 
 import UIKit
 
-class DailyWeatherCell : UITableViewCell {
+class DailyWeatherCell : UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var scrollViewTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var weatherSamples: [WeatherSample] = []
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
+    }
+    
+    func setup() {
+        let nibName = UINib(nibName: "SampleViewCell", bundle: nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: "SampleViewCell")
     }
     
     func setWeatherSamples(weatherSamples: [WeatherSample]) {
         self.weatherSamples = weatherSamples
+        collectionView.reloadData()
 
         if (weatherSamples.count > 0) {
             label.text = weatherSamples[0].weatherMain
         }
-
-        let width = 120
-        let height = self.bounds.height - scrollViewTopMargin.constant
-        scrollView.contentSize = CGSize(width: CGFloat(width * weatherSamples.count), height: height)
-
-        // TODO This is actually pretty expensive
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SampleViewCell", for: indexPath) as! SampleViewCell
         
-        var i = 0
-        for ws in weatherSamples {
-            let sampleView = Bundle.main.loadNibNamed("SampleView", owner: nil, options: nil)?[0] as! SampleView
-            sampleView.frame = CGRect(x: CGFloat(i*width) + 5, y: scrollViewTopMargin.constant, width: CGFloat(width - 10), height: height)
-            sampleView.setWeatherSample(weatherSample: ws)
-            self.addSubview(sampleView)
-            i += 1
-        }
+        let weatherSample = weatherSamples[indexPath.row]
+        cell.setWeatherSample(weatherSample: weatherSample)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return weatherSamples.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: collectionView.bounds.height)
     }
     
 }

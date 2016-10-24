@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SampleView" customModule="weather" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SampleViewCell" customModule="weather" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="172" height="141"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -43,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="NkH-k1-AZb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="1sZ-cK-eBo"/>
                 <constraint firstItem="NkH-k1-AZb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7C1-ym-DSJ"/>
