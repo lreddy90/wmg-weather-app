@@ -1,13 +1,14 @@
 # 5 Day Weather Forecast App
 
-A native iOS app to display 5 days weather forecasts. Data via [OpenWeatherMap](http://openweathermap.org/forecast5), 
+A native iOS app to display 5 days weather forecasts. Data via [OpenWeatherMap](http://openweathermap.org/forecast5).
 
 ## Install
 
 Requirements:
+
+* An OpenWeatherMap API Key  
 * [XCode](https://developer.apple.com/xcode/)  
 * [Cocoapods](http://cocoapods.org/)  
-* An OpenWeatherMap API Key  
 
 
 1. From the `app` folder, run Cocoapods install:
