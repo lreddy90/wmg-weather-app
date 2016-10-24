@@ -35,6 +35,16 @@ Use XCode to run, build and test the code:
 * Choose `Test` to run the automated tests;
 * Select `Product > Build` from the menu to build the app
 
+## TODO
+
+* We have no persistent storage
+* There's not much feedback from errors
+* The location lat/lon is hardcoded and well hidden in the code
+* OMG what is this for an UI
+* The app's structure is pretty ad-hoc
+* The API includes ways more data than what's presented to the user
+* Test coverage is next-to-zero
+
 ## License
 
 Lincesed under [The MIT License](http://opensource.org/licenses/MIT) (MIT)
