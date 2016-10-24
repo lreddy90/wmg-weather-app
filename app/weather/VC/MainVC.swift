@@ -29,9 +29,14 @@ class MainVC: UIViewController {
     }
     
     func downloadData() {
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
         // Download the data from OpenWeatherMap
         ApiHandler.getForecast { (status, error) in
-            
+
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
             if (error == nil) {
                 self.weatherTableView?.reloadData()
                 
