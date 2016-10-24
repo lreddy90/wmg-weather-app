@@ -24,6 +24,16 @@ Requirements:
 
 3. Open the weather.xcworkspace in XCode; before the first run, **don't forget to edit the Keys.plist file to include your OpenWeatherMap API Key**
 
+## Run/Build/Test
+
+Use XCode to run, build and test the code:
+
+![image](docs/xcode-test.png)
+
+* Choose `Run` to run the app on a Simulator or device;
+* Choose `Test` to run the automated tests;
+* Select `Product > Build` from the menu to build the app
+
 ## License
 
 Lincesed under [The MIT License](http://opensource.org/licenses/MIT) (MIT)
