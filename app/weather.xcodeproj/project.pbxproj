@@ -13,7 +13,7 @@
 		5E4CCC5E1DBD7091001CA7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4CCC5C1DBD7091001CA7C4 /* Main.storyboard */; };
 		5E4CCC601DBD7091001CA7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4CCC5F1DBD7091001CA7C4 /* Assets.xcassets */; };
 		5E4CCC631DBD7091001CA7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4CCC611DBD7091001CA7C4 /* LaunchScreen.storyboard */; };
-		5E4CCC6E1DBD7091001CA7C4 /* weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CCC6D1DBD7091001CA7C4 /* weatherTests.swift */; };
+		5E4CCC6E1DBD7091001CA7C4 /* weatherJSONParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CCC6D1DBD7091001CA7C4 /* weatherJSONParsingTests.swift */; };
 		5E4CCC7E1DBD74AE001CA7C4 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CCC7D1DBD74AE001CA7C4 /* ApiHandler.swift */; };
 		5E4CCC801DBD751C001CA7C4 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4CCC7F1DBD751C001CA7C4 /* Keys.plist */; };
 		5E4CCC821DBD75A2001CA7C4 /* HttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CCC811DBD75A2001CA7C4 /* HttpHandler.swift */; };
@@ -47,7 +47,7 @@
 		5E4CCC621DBD7091001CA7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E4CCC641DBD7091001CA7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4CCC691DBD7091001CA7C4 /* weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4CCC6D1DBD7091001CA7C4 /* weatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherTests.swift; sourceTree = "<group>"; };
+		5E4CCC6D1DBD7091001CA7C4 /* weatherJSONParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherJSONParsingTests.swift; sourceTree = "<group>"; };
 		5E4CCC6F1DBD7091001CA7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4CCC7D1DBD74AE001CA7C4 /* ApiHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiHandler.swift; path = IO/ApiHandler.swift; sourceTree = "<group>"; };
 		5E4CCC7F1DBD751C001CA7C4 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		5E4CCC6C1DBD7091001CA7C4 /* weatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				5E4CCC6D1DBD7091001CA7C4 /* weatherTests.swift */,
+				5E4CCC6D1DBD7091001CA7C4 /* weatherJSONParsingTests.swift */,
 				5E4CCC6F1DBD7091001CA7C4 /* Info.plist */,
 			);
 			path = weatherTests;
@@ -431,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4CCC6E1DBD7091001CA7C4 /* weatherTests.swift in Sources */,
+				5E4CCC6E1DBD7091001CA7C4 /* weatherJSONParsingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
